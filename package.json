@@ -1,0 +1,19 @@
+{
+  "name": "expressjs_restapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js", 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LonyStewart142/ExpressJS_RestAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LonyStewart142/ExpressJS_RestAPI/issues"
+  },
+  "homepage": "https://github.com/LonyStewart142/ExpressJS_RestAPI#readme"
+}
