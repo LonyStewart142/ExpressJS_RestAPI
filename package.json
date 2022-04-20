@@ -2,9 +2,9 @@
   "name": "expressjs_restapi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js", 
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/LonyStewart142/ExpressJS_RestAPI/issues"
   },
-  "homepage": "https://github.com/LonyStewart142/ExpressJS_RestAPI#readme"
+  "homepage": "https://github.com/LonyStewart142/ExpressJS_RestAPI#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
 }
