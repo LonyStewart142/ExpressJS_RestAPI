@@ -3,17 +3,28 @@ const express =  require('express');
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
-//INIT EXPRESS
-const app = express();
+//
+require('dotenv').config()
+
+//IMPORT ROUTES
+const userRoutes = require('./routes/users')
 
 //SAVE VALUE PORT 
 const port = process.env.PORT || 3000;
 
 
-require('dotenv').config()
+const startServer = async () => {
+
+//INIT EXPRESS
+const app = express();
+
+//CONNECT TO DATABASE MONGODB
+await mongoose.connect(process.env.DATABASE_CONNECTION,{
+    useNewUrlParser: true 
+  })
+
+
 app.use(bodyParser.json())
-
-
 
 
 //INITIAL ROUTE
@@ -21,14 +32,13 @@ app.get('/',(req,res)=>{
     res.send('Welcome to the users api.')
 })
 
-
-//CONNECT TO DATABASE MONGODB
-mongoose.connect(process.env.DATABASE_CONNECTION,{useNewUrlParser: true,
-    useUnifiedTopology: true },err=>{
-    if(err) console.log(err)
-      console.log('Connected to mongodb')
-})
+//USER ROUTES
+app.use('/users',userRoutes)
 
 
 app.listen(port,()=>console.log('Server listening on port:'+port))
 
+}
+
+
+startServer();
